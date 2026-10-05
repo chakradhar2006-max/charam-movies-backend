@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Charam Movies – Unlimited Entertainment, Anytime, Anywhere.</title>
+<meta name="description" content="Charam Movies: premium streaming of movies, shows, web series, anime and live TV.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--bg:#0B0B0F;--card:#1A1A22;--red:#E50914;--cy:#00C2FF;--gold:#FFD700;--tx:#fff;--mu:#a1a1b0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Poppins,Inter,system-ui,sans-serif}
+a,button{cursor:pointer}:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.glass{background:rgba(11,11,15,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+.btn{border:0;border-radius:8px;padding:.7rem 1.4rem;font-weight:600;transition:.25s;font-family:inherit;color:#fff}
+.btn:hover{transform:translateY(-2px)}.pri{background:var(--red);box-shadow:0 8px 24px rgba(229,9,20,.4)}
+.sec{background:rgba(255,255,255,.14);backdrop-filter:blur(8px)}
+.nl{color:#d0d0da;font-size:.85rem;padding:.4rem .6rem;border-radius:6px;transition:.2s;white-space:nowrap}.nl:hover,.nl.on{color:var(--gold)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s;pointer-events:none}.slide.on{opacity:1;pointer-events:auto}
+.row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:14px 4vw 40px;scrollbar-width:none}.row::-webkit-scrollbar{display:none}
+.card{flex:0 0 auto;width:170px;scroll-snap-align:start;position:relative;transition:transform .3s,z-index 0s;border-radius:12px;background:var(--card)}
+@media(min-width:768px){.card{width:210px}}
+.card:hover{transform:scale(1.1);z-index:5;box-shadow:0 20px 40px rgba(0,0,0,.7)}
+.poster{aspect-ratio:2/3;border-radius:12px 12px 0 0;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:12px;font-weight:800;font-size:1.05rem;line-height:1.1}
+.poster::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(255,255,255,.25),transparent 50%)}
+.pv{position:absolute;inset:0;opacity:0;transition:.3s;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px;background:linear-gradient(transparent 30%,rgba(0,0,0,.9))}
+.card:hover .pv{opacity:1}.pv i{position:absolute;top:10px;left:10px;font-style:normal;font-size:.65rem;background:rgba(0,0,0,.6);padding:2px 8px;border-radius:99px}
+.bar{height:3px;background:rgba(255,255,255,.25);border-radius:9px;overflow:hidden}.bar b{display:block;height:100%;width:0;background:var(--red)}
+.card:hover .bar b{animation:pg 6s linear infinite}@keyframes pg{to{width:100%}}
+.ib{width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.4);color:#fff;font-size:.8rem}.ib:hover{background:#fff;color:#000}
+.badge{font-size:.6rem;font-weight:700;padding:1px 6px;border-radius:4px;border:1px solid var(--gold);color:var(--gold)}
+.sk{background:linear-gradient(90deg,#1A1A22 25%,#262632 50%,#1A1A22 75%);background-size:200% 100%;animation:sh 1.2s infinite;border-radius:12px}@keyframes sh{to{background-position:-200% 0}}
+.fade{opacity:0;transform:translateY(24px);transition:.7s}.fade.in{opacity:1;transform:none}
+.view{animation:vin .5s}@keyframes vin{from{opacity:0;transform:translateY(12px)}}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.8);display:none;overflow-y:auto;padding:4vh 3vw}.modal.open{display:block;animation:vin .3s}
+.box{max-width:900px;margin:auto;background:var(--card);border-radius:16px;overflow:hidden;position:relative}
+input,select{background:#12121a;border:1px solid #333344;color:#fff;border-radius:8px;padding:.6rem .8rem;font-family:inherit;width:100%}
+.gold{color:var(--gold)}.chip{padding:2px 10px;border-radius:99px;background:rgba(0,194,255,.15);color:var(--cy);font-size:.75rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="logo" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#0B0B0F" stroke="#FFD700" stroke-width="2.5" stroke-dasharray="5 3"/><path d="M13 9 41 24 13 39Z" fill="#E50914" stroke="#FFD700" stroke-width="1.5" stroke-linejoin="round"/><text x="14.5" y="31" fill="#FFD700" font-size="20" font-weight="800" font-family="Poppins,sans-serif">C</text></symbol></svg>
+
+<header class="glass fixed top-0 inset-x-0 z-50" style="padding-top:env(safe-area-inset-top,0px)">
+<nav class="flex items-center gap-3 px-4 md:px-8 h-16" aria-label="Main">
+<a href="#" onclick="go('home')" class="flex items-center gap-2 shrink-0" aria-label="Charam Movies home"><svg width="34" height="34"><use href="#logo"/></svg><b class="hidden sm:block text-lg tracking-wide">CHARAM <span class="gold">MOVIES</span></b></a>
+<div id="links" class="hidden lg:flex items-center ml-4"></div>
+<div class="flex-1"></div>
+<input id="q" type="search" placeholder="Search titles, cast…" aria-label="Search" class="!w-36 md:!w-60 !rounded-full" oninput="doSearch()" onfocus="go('search')">
+<button class="nl hidden md:block" onclick="go('mylist')">My List</button>
+<button class="nl hidden md:block" onclick="go('admin')">Admin</button>
+<button id="loginBtn" class="btn pri !py-2 !px-4 text-sm" onclick="openM('auth')">Login</button>
+<button id="avatar" class="hidden w-9 h-9 rounded-full font-bold" style="background:linear-gradient(135deg,var(--cy),var(--red))" onclick="openM('prof')" aria-label="Profile"></button>
+</nav>
+<div id="links2" class="lg:hidden flex overflow-x-auto px-3 pb-2" style="scrollbar-width:none"></div>
+</header>
+
+<main id="main" class="pt-16"></main>
+
+<footer class="mt-10 px-6 md:px-12 py-12 border-t border-white/10 text-sm" style="color:var(--mu)">
+<div class="flex items-center gap-2 mb-4"><svg width="30" height="30"><use href="#logo"/></svg><b class="text-white">CHARAM <span class="gold">MOVIES</span></b></div>
+<p class="mb-6 italic">Unlimited Entertainment, Anytime, Anywhere.</p>
+<div class="flex flex-wrap gap-x-6 gap-y-2 mb-6"><a href="#about">About</a><a href="#contact">Contact</a><a href="#faq">FAQ</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Service</a></div>
+<div class="flex gap-4 mb-6"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="YouTube">YouTube</a><a href="#" aria-label="X">X</a><a href="#" aria-label="Facebook">Facebook</a></div>
+<p>© 2026 Charam Movies. All rights reserved. Sample data and gradient artwork are original placeholders.</p></footer>
+
+<div id="auth" class="modal" onclick="if(event.target===this)closeM('auth')"><div class="box p-6 max-w-md">
+<h2 id="at" class="text-2xl font-bold mb-4">Welcome back</h2>
+<div class="space-y-3"><input id="nm" placeholder="Full name" class="hidden" aria-label="Name"><input id="em" type="email" placeholder="Email" aria-label="Email"><input id="pw" type="password" placeholder="Password" aria-label="Password">
+<p id="authErr" class="text-sm text-red-400 hidden"></p>
+<button class="btn pri w-full" onclick="login()">Continue</button></div>
+<p class="mt-4 text-sm" style="color:var(--mu)"><span id="ah">New here?</span> <a class="gold underline" onclick="toggleAuth()">Switch</a></p></div></div>
+<div id="prof" class="modal" onclick="if(event.target===this)closeM('prof')"><div class="box p-6 max-w-lg text-center">
+<h2 class="text-2xl font-bold mb-5">Who's watching?</h2><div id="pl" class="flex flex-wrap justify-center gap-5"></div>
+<button class="btn sec mt-6" onclick="logout()">Sign out</button></div></div>
+<div id="det" class="modal" onclick="if(event.target===this)closeM('det')"><div class="box" id="detb"></div></div>
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] px-5 py-3 rounded-full glass hidden"></div>
+
+<script>
+// ====================== Charam Movies — API-connected frontend ======================
+// Point this at your running Flask backend (see README.md in the backend project).
+const API_BASE = "https://charam-movies-backend-production.up.railway.app/api";
+const G=['Action','Adventure','Animation','Comedy','Drama','Romance','Sci-Fi','Thriller'];
+const GENRE_IDS={'Action':1,'Adventure':7,'Animation':8,'Comedy':2,'Drama':3,'Romance':4,'Sci-Fi':6,'Thriller':5};
+const ROWS_DEF=[["Trending Now",m=>m.r>=8],["New Releases",m=>m.y>=2026],["Popular Movies",m=>true],["Top Rated",m=>m.r>=8.4]];
+const NAV=['Home','Movies','TV Shows','Web Series','Live TV','Anime','Kids','Genres'];
+const $=s=>document.querySelector(s);
+
+let D=[];                 // cached movie list, shape: {id,t,y,r,g,l,m,c,h,q,poster}
+let token=null,refreshToken=null,user=null,wlIds=[],cw=[],fullHist=[],view='home',si=0,timer;
+try{token=localStorage.getItem('cm_token');refreshToken=localStorage.getItem('cm_refresh');const u=localStorage.getItem('cm_user');if(u)user=JSON.parse(u)}catch(e){}
+
+// ---------------------------------------------------------------- API helper
+async function api(path,opts={}){
+  const headers=Object.assign({'Content-Type':'application/json'},opts.headers||{});
+  if(token)headers['Authorization']='Bearer '+token;
+  let res;
+  try{res=await fetch(API_BASE+path,Object.assign({},opts,{headers}))}
+  catch(e){toast('Cannot reach the backend at '+API_BASE);throw e}
+  let body=null;try{body=await res.json()}catch(e){}
+  if(res.status===401&&token){ // token expired/revoked — sign the user out locally
+    logoutLocal();
+  }
+  if(!res.ok){throw new Error((body&&body.message)||('Request failed ('+res.status+')'))}
+  return body;
+}
+const mapMovie=m=>({id:m.id,t:m.title,y:m.release_year,r:m.rating,g:m.genres||[],l:m.language,m:m.duration,c:m.country,q:m.quality,
+  poster:m.poster_url,h:(m.id*47)%360,description:m.description,trailer_url:m.trailer_url,director:m.director,cast:m.cast,
+  avg:m.average_user_rating,reviews:m.review_count});
+
+const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.remove('hidden');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.add('hidden'),2500)};
+const pos=m=>m.poster?`background-image:url('${m.poster}');background-size:cover;background-position:center`:`background:linear-gradient(160deg,hsl(${m.h},70%,42%),hsl(${(m.h+50)%360},60%,14%))`;
+
+$('#links').innerHTML=$('#links2').innerHTML=NAV.map(n=>`<a class="nl ${n=='Home'?'on':''}" href="#" onclick="navTo('${n}');return false">${n}</a>`).join('');
+function navTo(n){const map={Anime:'Anime',Kids:'Family',Movies:'Popular Movies'};go('home');if(map[n]){setTimeout(()=>{[...document.querySelectorAll('[data-row]')].find(e=>e.dataset.row==map[n])?.scrollIntoView({behavior:'smooth',block:'center'})},300)}else if(n=='Genres'){setTimeout(()=>document.querySelector('[data-row=Action]')?.scrollIntoView({behavior:'smooth',block:'center'}),300)}else if(n!='Home')toast(n+' catalogue: shown within the Home rows below')}
+
+// ------------------------------------------------------------------- cards
+function card(m){const inL=wlIds.includes(m.id);return `<article class="card" tabindex="0" onkeydown="if(event.key=='Enter')openDet(${m.id})">
+<div class="poster" style="${pos(m)}" role="img" aria-label="${m.t} poster"><span style="position:relative;text-shadow:0 2px 10px #000">${m.poster?'':m.t}</span>
+<span class="badge absolute top-2 right-2 bg-black/50" style="z-index:1">${m.q}</span>
+<div class="pv"><i>▶ Trailer preview</i><div class="bar"><b></b></div>
+<div class="flex gap-2 items-center"><button class="ib" style="background:#fff;color:#000" onclick="playTrailer(${m.id})" aria-label="Watch trailer for ${m.t}">▶</button><button class="ib" onclick="tgl(${m.id},this)" aria-label="Watchlist">${inL?'✓':'+'}</button><button class="ib" onclick="share(${m.id})" aria-label="Share">↗</button><button class="ib ml-auto" onclick="openDet(${m.id})" aria-label="Details">ⓘ</button></div></div></div>
+<div class="p-3 text-xs" style="color:var(--mu)"><div class="text-white font-semibold text-sm truncate">${m.t}</div><div class="flex gap-2 mt-1"><span class="gold">★ ${m.r}</span><span>${m.y}</span><span>${m.m}m</span></div><div class="truncate mt-1">${(m.g||[]).join(' • ')}</div></div></article>`}
+
+async function tgl(id,b){
+  if(!requireLogin())return;
+  const inList=wlIds.includes(id);
+  try{
+    if(inList){await api('/watchlist/'+id,{method:'DELETE'});wlIds=wlIds.filter(x=>x!=id);toast('Removed from My List')}
+    else{await api('/watchlist',{method:'POST',body:JSON.stringify({movie_id:id})});wlIds.push(id);toast('Added to My List')}
+    if(b)b.textContent=inList?'+':'✓';
+    if(view=='mylist')go('mylist');
+  }catch(e){toast(e.message)}
+}
+function share(id){const m=D.find(x=>x.id==id);const t=(m?m.t:'This title')+' on Charam Movies';try{navigator.clipboard.writeText(t+' – '+location.href)}catch(e){}toast('Link copied: '+t)}
+
+async function play(id){
+  if(!requireLogin())return;
+  try{
+    const r=await api('/movies/'+id+'/stream');
+    toast('Now playing “'+r.data.title+'” ('+r.data.quality+', demo player — video_url returned by API)');
+    await loadContinueWatching();
+  }catch(e){toast(e.message)}
+}
+
+function getYouTubeId(url){
+  if(!url)return null;
+  const match=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&?/]+)/i);
+  return match?match[1]:null;
+}
+
+async function playTrailer(id){
+  const box=$('#detb');
+  let m=D.find(x=>x.id==id);
+  try{
+    const r=await api('/movies/'+id);
+    if(r.data&&r.data.movie)m=mapMovie(r.data.movie);
+  }catch(e){
+    if(!m){toast(e.message);return}
+  }
+  if(!m||!m.trailer_url){toast('Trailer not available for this movie');return}
+  const videoId=getYouTubeId(m.trailer_url);
+  if(!videoId){toast('Invalid YouTube trailer URL');return}
+  box.innerHTML=`<button class="absolute top-3 right-3 z-10 ib" onclick="closeM('det')" aria-label="Close">✕</button>
+<div class="p-5 md:p-8">
+<h2 class="text-2xl md:text-3xl font-bold mb-5">${m.t}</h2>
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
+<iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/${videoId}?rel=0" title="${m.t} Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="flex gap-3 mt-5 flex-wrap">
+<a href="${m.trailer_url}" target="_blank" rel="noopener noreferrer" class="btn pri">▶ Watch on YouTube</a>
+<button class="btn sec" onclick="openDet(${m.id})">ⓘ Movie Details</button>
+</div></div>`;
+  openM('det');
+}
+
+function requireLogin(){if(!token){toast('Please login first');openM('auth');return false}return true}
+
+// -------------------------------------------------------------------- auth
+let reg=false;
+function toggleAuth(){reg=!reg;$('#nm').classList.toggle('hidden',!reg);$('#at').textContent=reg?'Create account':'Welcome back';$('#ah').textContent=reg?'Have an account?':'New here?'}
+async function login(){
+  const email=$('#em').value.trim(),password=$('#pw').value,full_name=$('#nm').value.trim();
+  const errEl=$('#authErr');errEl.classList.add('hidden');
+  if(!email||!password){errEl.textContent='Email and password are required';errEl.classList.remove('hidden');return}
+  try{
+    const path=reg?'/auth/register':'/auth/login';
+    const body=reg?{full_name:full_name||email.split('@')[0],email,password}:{email,password};
+    const r=await api(path,{method:'POST',body:JSON.stringify(body)});
+    token=r.data.access_token;refreshToken=r.data.refresh_token;user=r.data.user;
+    try{localStorage.setItem('cm_token',token);localStorage.setItem('cm_refresh',refreshToken);localStorage.setItem('cm_user',JSON.stringify(user))}catch(e){}
+    closeM('auth');setUser(user);
+    await Promise.all([loadWatchlist(),loadContinueWatching()]);
+    if(view=='home')go('home');
+  }catch(e){errEl.textContent=e.message;errEl.classList.remove('hidden')}
+}
+function setUser(u){$('#loginBtn').classList.add('hidden');$('#avatar').classList.remove('hidden');$('#avatar').textContent=(u.full_name||u.email)[0].toUpperCase();toast('Signed in as '+(u.full_name||u.email))}
+function logoutLocal(){token=null;refreshToken=null;user=null;wlIds=[];cw=[];fullHist=[];try{localStorage.removeItem('cm_token');localStorage.removeItem('cm_refresh');localStorage.removeItem('cm_user')}catch(e){}$('#loginBtn').classList.remove('hidden');$('#avatar').classList.add('hidden')}
+async function logout(){try{if(token)await api('/auth/logout',{method:'POST'})}catch(e){}logoutLocal();closeM('prof');toast('Signed out')}
+function pick(n){closeM('prof');toast('Profile: '+n+' (profile switching is a local UI preview; the backend tracks one account per login)')}
+
+function openM(id){$('#'+id).classList.add('open');if(id=='prof')$('#pl').innerHTML=['You','Partner','Kids','Guest'].map((n,i)=>`<button onclick="pick('${n}')" class="text-center"><div class="w-20 h-20 rounded-xl grid place-items-center text-3xl font-bold" style="background:hsl(${i*90+200},70%,45%)">${n[0]}</div><div class="mt-2 text-sm">${n}</div></button>`).join('')}
+function closeM(id){$('#'+id).classList.remove('open')}
+
+// --------------------------------------------------------------- data load
+async function loadMovies(){
+  const r=await api('/movies?per_page=100');
+  D=r.data.movies.map(mapMovie);
+}
+
+async function loadGenreRows(){
+  const rows=[];
+  for(const genre of G){
+    const id=GENRE_IDS[genre];
+    try{
+      const r=await api('/genres/'+id+'/movies');
+      const movies=(r.data&&r.data.movies?r.data.movies:[]).map(mapMovie);
+      if(movies.length) rows.push(rowHTML(genre,movies));
+    }catch(e){
+      console.warn('Could not load '+genre+' movies:',e.message);
+    }
+  }
+  return rows.join('');
+}
+async function loadWatchlist(){
+  if(!token){wlIds=[];return}
+  try{const r=await api('/watchlist');wlIds=r.data.watchlist.map(w=>w.movie.id)}catch(e){wlIds=[]}
+}
+async function loadContinueWatching(){
+  if(!token){cw=[];return}
+  try{const r=await api('/history/continue-watching');cw=r.data.continue_watching.map(h=>mapMovie(h.movie))}catch(e){cw=[]}
+}
+
+// ------------------------------------------------------------------- views
+function heroHTML(list){const H=list.length?list:D.filter(m=>m.r>=8.6).slice(0,4);
+return `<section class="relative h-[85vh] min-h-[520px] overflow-hidden" aria-label="Featured" id="hero">${H.map((m,i)=>`<div class="slide ${i?'':'on'}" style="${pos(m)}"><div class="absolute inset-0" style="background:radial-gradient(circle at 75% 30%,hsla(${m.h},90%,60%,.35),transparent 55%),linear-gradient(90deg,var(--bg) 5%,transparent 70%),linear-gradient(0deg,var(--bg),transparent 40%)"></div>
+<div class="absolute bottom-[18%] left-[5vw] max-w-xl"><span class="chip gold" style="background:rgba(255,215,0,.12);color:var(--gold)">FEATURED • ${m.q}</span>
+<h1 class="text-5xl md:text-7xl font-extrabold leading-none my-3" style="text-shadow:0 4px 30px #000">${m.t}</h1>
+<div class="flex gap-3 text-sm mb-3"><span class="gold">★ ${m.r}</span><span>${m.y}</span><span>${m.m}m</span><span>${(m.g||[]).join(' • ')}</span></div>
+<p class="mb-6 text-gray-300 hidden sm:block">${m.description?m.description.slice(0,160):'A pulse-pounding, cinematic ride through a world where every choice has a cost.'}</p>
+<div class="flex gap-3 flex-wrap"><button class="btn pri" onclick="playTrailer(${m.id})">▶ Watch Trailer</button><button class="btn sec" onclick="tgl(${m.id})">+ Add to Watchlist</button><button class="btn sec" onclick="openDet(${m.id})">ⓘ More Info</button></div></div></div>`).join('')}
+<div class="absolute bottom-6 right-[5vw] flex gap-2">${H.map((_,i)=>`<button class="h-1.5 rounded-full bg-white/40 transition-all" style="width:${i?'24px':'44px'}" data-d="${i}" onclick="slide(${i})" aria-label="Slide ${i+1}"></button>`).join('')}</div></section>`}
+function slide(n){const s=document.querySelectorAll('.slide'),d=document.querySelectorAll('[data-d]');if(!s.length)return;si=n%s.length;s.forEach((e,i)=>e.classList.toggle('on',i==si));d.forEach((e,i)=>{e.style.width=i==si?'44px':'24px';e.style.background=i==si?'var(--red)':''});clearInterval(timer);timer=setInterval(()=>slide(si+1),6000)}
+function rowHTML(name,arr){return arr.length?`<section class="fade" data-row="${name}"><h2 class="text-xl md:text-2xl font-bold px-[4vw] pt-6">${name}</h2><div class="row">${arr.map(card).join('')}</div></section>`:''}
+function skel(){return [1,2,3].map(()=>`<div class="px-[4vw] pt-6"><div class="sk h-6 w-40 mb-4"></div><div class="flex gap-3 overflow-hidden">${'<div class="sk w-[170px] md:w-[210px] aspect-[2/3] shrink-0"></div>'.repeat(8)}</div></div>`).join('')}
+function reveal(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.fade').forEach(e=>io.observe(e))}
+
+async function go(v){
+  view=v;const el=$('#main');clearInterval(timer);window.scrollTo({top:0});
+  if(v=='home'){
+    el.innerHTML=`<div class="view" id="hero-wrap"></div><div id="rows">${skel()}</div>`;
+    try{
+      if(!D.length)await loadMovies();
+      await Promise.all([loadWatchlist(),loadContinueWatching()]);
+      const featured=await api('/featured').then(r=>r.data.featured.map(f=>mapMovie(f.movie))).catch(()=>[]);
+      $('#hero-wrap').innerHTML=heroHTML(featured);slide(0);
+      const baseRows=ROWS_DEF.map(r=>rowHTML(r[0],D.filter(r[1]))).join('');
+      const genreRows=await loadGenreRows();
+      const extraRows=
+        rowHTML('Continue Watching',cw)+
+        genreRows+
+        rowHTML('South Indian',D.filter(m=>['Tamil','Telugu'].includes(m.l)))+
+        rowHTML('Bollywood',D.filter(m=>m.l=='Hindi'))+
+        rowHTML('Hollywood',D.filter(m=>m.l=='English'));
+      $('#rows').innerHTML=baseRows+extraRows;
+      reveal();
+    }catch(e){$('#rows').innerHTML=`<p class="px-[4vw] py-10" style="color:var(--mu)">Could not load movies — ${e.message}. Is the backend running at ${API_BASE}?</p>`}
+  }
+  else if(v=='search')renderSearch();
+  else if(v=='mylist')renderMyList();
+  else if(v=='admin')renderAdmin();
+}
+
+async function renderMyList(){
+  const el=$('#main');el.innerHTML=`<div class="view px-[4vw] py-10"><h1 class="text-4xl font-extrabold mb-2">My List</h1><p class="mb-6" style="color:var(--mu)">Favorites & saved titles${user?' for '+(user.full_name||user.email):''}.</p><div id="wlwrap" class="flex flex-wrap gap-4">Loading…</div><h2 class="text-2xl font-bold mt-10 mb-4">Watch History</h2><div id="hiwrap" class="flex flex-wrap gap-4">Loading…</div></div>`;
+  if(!requireLogin()){$('#wlwrap').innerHTML='<p style="color:var(--mu)">Login to see your saved titles.</p>';$('#hiwrap').innerHTML='';return}
+  try{
+    const wl=await api('/watchlist');
+    const list=wl.data.watchlist.map(w=>mapMovie(w.movie));
+    wlIds=list.map(m=>m.id);
+    $('#wlwrap').innerHTML=list.length?list.map(card).join(''):'<p style="color:var(--mu)">Nothing here yet — hover a title and tap +.</p>';
+  }catch(e){$('#wlwrap').innerHTML='<p style="color:var(--mu)">'+e.message+'</p>'}
+  try{
+    const h=await api('/history');
+    const list=h.data.history.map(x=>mapMovie(x.movie));
+    $('#hiwrap').innerHTML=list.length?list.map(card).join(''):'<p style="color:var(--mu)">Play something to build your history.</p>';
+  }catch(e){$('#hiwrap').innerHTML='<p style="color:var(--mu)">'+e.message+'</p>'}
+}
+
+async function openDet(id){
+  const box=$('#detb');box.innerHTML='<div class="p-10 text-center" style="color:var(--mu)">Loading…</div>';openM('det');$('#det').scrollTop=0;
+  let m;try{const r=await api('/movies/'+id);m=mapMovie(r.data.movie)}catch(e){box.innerHTML='<p class="p-10">'+e.message+'</p>';return}
+  let reviews=[];try{reviews=(await api('/reviews/movie/'+id)).data.reviews}catch(e){}
+  let sim=[];try{sim=(await api('/movies/'+id+'/similar')).data.movies.map(mapMovie)}catch(e){}
+  box.innerHTML=`<button class="absolute top-3 right-3 z-10 ib" onclick="closeM('det')" aria-label="Close">✕</button>
+<div class="relative h-56 md:h-80 grid place-items-center" style="${pos(m)}"><div class="absolute inset-0" style="background:linear-gradient(transparent 40%,var(--card))"></div>
+<button onclick="playTrailer(${id})" class="relative w-20 h-20 rounded-full pri grid place-items-center text-3xl btn" aria-label="Play trailer">▶</button><span class="absolute bottom-3 left-5 text-xs chip">Official trailer</span></div>
+<div class="p-5 md:p-8"><h2 class="text-3xl md:text-5xl font-extrabold">${m.t}</h2>
+<div class="flex flex-wrap gap-3 items-center my-3 text-sm"><span class="gold font-bold">IMDb ★ ${m.r}</span><span>${m.y}</span><span>${m.m} min</span><span class="badge">${m.q}</span><span>${m.l}</span><span>${m.c}</span></div>
+<div class="flex flex-wrap gap-2 mb-4">${(m.g||[]).map(g=>`<span class="chip">${g}</span>`).join('')}</div>
+<p style="color:#d0d0da" class="mb-4">${m.description||'No synopsis available.'}</p>
+<p class="text-sm mb-1"><b>Director:</b> ${m.director||'—'}</p><p class="text-sm mb-4"><b>Cast:</b> ${(m.cast||[]).join(', ')||'—'}</p>
+<div class="flex gap-3 mb-6"><button class="btn pri" onclick="playTrailer(${id})">▶ Watch Trailer</button><button class="btn sec" onclick="tgl(${id})">+ My List</button></div>
+<h3 class="font-bold text-lg mb-2">User Reviews (avg ★ ${m.avg??'—'} · ${m.reviews??0})</h3>
+${reviews.length?reviews.map(rv=>`<div class="mb-3 p-3 rounded-lg bg-white/5 text-sm"><b>${rv.user_name||'User'}</b> <span class="gold">${'★'.repeat(rv.rating)}</span><br><span style="color:var(--mu)">${rv.review_text||''}</span></div>`).join(''):'<p style="color:var(--mu)" class="mb-4">No reviews yet.</p>'}
+${token?`<div class="mt-3 flex gap-2"><select id="rvRating" class="!w-24"><option value="5">★★★★★</option><option value="4">★★★★</option><option value="3">★★★</option><option value="2">★★</option><option value="1">★</option></select><input id="rvText" placeholder="Write a short review…"><button class="btn sec" onclick="submitReview(${id})">Post</button></div>`:''}
+<h3 class="font-bold text-lg mt-5 mb-2">Similar Movies</h3><div class="flex gap-3 overflow-x-auto pb-4">${sim.map(s=>`<button onclick="openDet(${s.id})" class="shrink-0 w-28 text-left"><div class="poster !rounded-lg text-xs" style="${pos(s)}"><span style="position:relative">${s.poster?'':s.t}</span></div></button>`).join('')}</div></div>`;
+}
+async function submitReview(id){
+  if(!requireLogin())return;
+  const rating=+$('#rvRating').value,review_text=$('#rvText').value.trim();
+  try{await api('/reviews',{method:'POST',body:JSON.stringify({movie_id:id,rating,review_text})});toast('Review posted');openDet(id)}
+  catch(e){toast(e.message)}
+}
+
+function renderSearch(){const u=a=>[...new Set(a)].sort();const sel=(id,l,o)=>`<select id="${id}" onchange="doSearch()" aria-label="${l}"><option value="">${l}</option>${o.map(x=>`<option>${x}</option>`).join('')}</select>`;
+$('#main').innerHTML=`<div class="view px-[4vw] py-10"><h1 class="text-4xl font-extrabold mb-5">Search</h1><div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-8">${sel('fg','Genre',G)}${sel('fl','Language',u(D.map(m=>m.l)))}${sel('fy','Year',u(D.map(m=>m.y)).reverse())}${sel('fr','Rating',['9','8','7'])}${sel('fc','Country',u(D.map(m=>m.c)))}${sel('fd','Duration',['<100','100-130','>130'])}</div><div id="res" class="flex flex-wrap gap-4">Loading…</div></div>`;doSearch()}
+async function doSearch(){
+  if(view!='search')return;
+  const g=k=>($('#'+k)||{}).value||'',q=$('#q').value.trim();
+  const params=new URLSearchParams();
+  if(q)params.set('q',q);
+  if(g('fg'))params.set('genre',g('fg'));
+  if(g('fl'))params.set('language',g('fl'));
+  if(g('fy'))params.set('year',g('fy'));
+  if(g('fr'))params.set('min_rating',g('fr'));
+  if(g('fc'))params.set('country',g('fc'));
+  const d=g('fd');if(d=='<100')params.set('max_duration','99');if(d=='100-130'){params.set('min_duration','100');params.set('max_duration','130')}if(d=='>130')params.set('min_duration','131');
+  try{
+    const r=await api('/movies/search?'+params.toString());
+    const list=r.data.movies.map(mapMovie);
+    $('#res').innerHTML=list.length?list.map(card).join(''):'<p style="color:var(--mu)">No titles match your filters.</p>';
+  }catch(e){$('#res').innerHTML='<p style="color:var(--mu)">'+e.message+'</p>'}
+}
+
+async function renderAdmin(){
+  const el=$('#main');
+  if(!user||user.role!=='admin'){el.innerHTML=`<div class="view px-[4vw] py-16 text-center"><h1 class="text-3xl font-bold mb-3">Admin access required</h1><p style="color:var(--mu)" class="mb-6">Log in with an admin account to view the dashboard.</p><button class="btn pri" onclick="openM('auth')">Login</button></div>`;return}
+  el.innerHTML=`<div class="view px-[4vw] py-10"><h1 class="text-4xl font-extrabold mb-6">Admin <span class="gold">Dashboard</span></h1><div id="adminStats">Loading…</div></div>`;
+  try{
+    const [dash,ana]=await Promise.all([api('/admin/dashboard'),api('/admin/analytics')]);
+    const s=dash.data,a=ana.data;
+    const st=[["Total Users",s.total_users],["Titles",s.total_movies],["Streams Today",s.streams_today],["Revenue (mock)","₹"+s.revenue_mock]];
+    const bars=a.daily_streams.length?a.daily_streams.map(d=>d.count):[0,0,0,0,0,0,0];
+    const maxBar=Math.max(...bars,1);
+    $('#adminStats').innerHTML=`
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">${st.map(x=>`<div class="p-5 rounded-2xl" style="background:var(--card)"><div class="text-sm" style="color:var(--mu)">${x[0]}</div><div class="text-3xl font-bold mt-1">${x[1]}</div></div>`).join('')}</div>
+<div class="grid md:grid-cols-2 gap-6"><div class="p-5 rounded-2xl" style="background:var(--card)"><h2 class="font-bold mb-3">Streams (last 7 days)</h2><div class="flex items-end gap-3 h-40">${bars.map(b=>`<div class="flex-1 rounded-t" style="height:${Math.max(6,(b/maxBar)*100)}%;background:linear-gradient(var(--cy),var(--red))" title="${b} streams"></div>`).join('')}</div></div>
+<div class="p-5 rounded-2xl" style="background:var(--card)"><h2 class="font-bold mb-3">Upload Licensed Metadata</h2><div class="space-y-2"><input id="at1" placeholder="Title"><div class="grid grid-cols-3 gap-2"><input id="at2" type="number" placeholder="Year"><input id="at3" type="number" step=".1" placeholder="Rating"><input id="at4" type="number" placeholder="Mins"></div><select id="at5">${G.map(g=>`<option>${g}</option>`).join('')}</select><button class="btn pri w-full" onclick="addT()">Add Title</button></div></div></div>
+<div class="p-5 rounded-2xl mt-6" style="background:var(--card)"><h2 class="font-bold mb-3">Content Management</h2><div class="overflow-x-auto"><table class="w-full text-sm"><tbody>${D.map(m=>`<tr class="border-t border-white/10"><td class="py-2">${m.t}</td><td>${m.y}</td><td>${(m.g||[])[0]||''}</td><td class="gold">★ ${m.r}</td><td class="text-right"><button class="chip" onclick="delT(${m.id})">Remove</button></td></tr>`).join('')}</tbody></table></div></div>
+<div class="grid md:grid-cols-2 gap-4 mt-6 text-sm"><div class="p-5 rounded-2xl" style="background:var(--card)"><h3 class="font-bold mb-2">Most Watched</h3><p style="color:var(--mu)">${a.most_watched_movies.map(x=>x.title+' ('+x.plays+')').join(', ')||'No streams yet'}</p></div><div class="p-5 rounded-2xl" style="background:var(--card)"><h3 class="font-bold mb-2">Subscriptions</h3><p style="color:var(--mu)">${Object.entries(a.subscription_counts).map(([k,v])=>k+': '+v).join(' • ')||'—'}</p></div></div>`;
+  }catch(e){$('#adminStats').innerHTML='<p style="color:var(--mu)">'+e.message+'</p>'}
+}
+async function addT(){
+  const title=$('#at1').value.trim();if(!title)return toast('Enter a title');
+  try{
+    await api('/admin/movies',{method:'POST',body:JSON.stringify({title,release_year:+$('#at2').value||2026,rating:+$('#at3').value||7,duration:+$('#at4').value||100,genres:[$('#at5').value],language:'English',country:'USA',quality:'HD'})});
+    toast('Added “'+title+'”');D=[];await loadMovies();renderAdmin();
+  }catch(e){toast(e.message)}
+}
+async function delT(id){
+  try{await api('/admin/movies/'+id,{method:'DELETE'});toast('Movie removed');D=D.filter(m=>m.id!=id);renderAdmin()}
+  catch(e){toast(e.message)}
+}
+
+let searchDebounce;
+function doSearchDebounced(){clearTimeout(searchDebounce);searchDebounce=setTimeout(doSearch,300)}
+$('#q').removeAttribute('oninput');$('#q').addEventListener('input',()=>{if(view=='search')doSearchDebounced()});
+
+document.addEventListener('keydown',e=>{if(e.key=='Escape')document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'))});
+
+(async function init(){
+  if(token&&user)setUser(user);
+  await go('home');
+})();
+</script>
+</body></html>
